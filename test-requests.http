@@ -39,5 +39,16 @@ Authorization: Bearer {{token}}
 }
 
 ### TEST GET SPECIFIC PLAYLIST
+GET {{host}}/playlists/2
+Authorization: Bearer {{token}}
+
+### TEST GET PLAYLIST NOT OWNED BY USER
 GET {{host}}/playlists/1
+Authorization: Bearer {{token}}
+
+### TEST GET ALL TRACKS
+GET {{host}}/tracks
+
+### TEST GET SPECIFIC TRACK
+GET {{host}}/tracks/1
 Authorization: Bearer {{token}}
