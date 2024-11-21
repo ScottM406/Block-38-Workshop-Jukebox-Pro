@@ -49,6 +49,6 @@ Authorization: Bearer {{token}}
 ### TEST GET ALL TRACKS
 GET {{host}}/tracks
 
-### TEST GET SPECIFIC TRACK
+### TEST GET SPECIFIC TRACK (WITH PLAYLIST INFO IF USER OWNS THE PLAYLIST)
 GET {{host}}/tracks/1
 Authorization: Bearer {{token}}
