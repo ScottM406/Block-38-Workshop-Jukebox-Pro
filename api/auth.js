@@ -48,7 +48,7 @@ router.post("/login", async (req, res, next) => {
 });
 
 const authenticate = (req, res, next) => {
-  if (req.customer) {
+  if (req.user) {
     next();
   } else {
     next({ status: 401, message: "You must be logged in for this request."});
@@ -58,4 +58,4 @@ const authenticate = (req, res, next) => {
 module.exports = {
   router,
   authenticate,
-}
+};

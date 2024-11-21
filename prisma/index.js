@@ -2,24 +2,24 @@ const bcrypt = require("bcrypt");
 
 const { PrismaClient } = require("@prisma/client");
 
-const prisma = new PrismaClient();$extends({
+const prisma = new PrismaClient().$extends({
   model: {
-    customer: {
+    user: {
       async register(username, password) {
         const hashedPassword = await bcrypt.hash(password, 10);
-        const user = await prisma.customer.create({
+        const user = await prisma.user.create({
           data: { username, password: hashedPassword },
         });
-        return customer;
+        return user;
       },
 
       async login(username, password) {
-        const user = await prisma.customer.findUniqueOrThrow({
+        const user = await prisma.user.findUniqueOrThrow({
           where: { username },
         });
         const validCredentials = await bcrypt.compare(password, user.password)
         if (!validCredentials) throw Error("Invalid Credentials");
-        return customer;
+        return user;
       }
     },
   },
